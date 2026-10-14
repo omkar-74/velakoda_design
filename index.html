@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VelaKoda – Private AI Chatbot for Your Business</title>
+    <meta
+      name="description"
+      content="Deploy secure AI assistants with your own data on cloud, on-premise or offline."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- SVG icon sprite -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol id="shield" viewBox="0 0 24 24">
+        <path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" />
+        <path d="M8.5 12l2.5 2.5 4.5-5" />
+      </symbol>
+      <symbol id="lock" viewBox="0 0 24 24">
+        <rect x="5" y="11" width="14" height="10" rx="2" />
+        <path d="M8 11V8a4 4 0 018 0v3" />
+      </symbol>
+      <symbol id="cloud" viewBox="0 0 24 24">
+        <path d="M7 18a4 4 0 010-8 5 5 0 019.6-1A4.5 4.5 0 0117 18z" />
+      </symbol>
+      <symbol id="server" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="18" height="6" rx="1.5" />
+        <rect x="3" y="14" width="18" height="6" rx="1.5" />
+        <path d="M7 7h.01M7 17h.01" />
+      </symbol>
+      <symbol id="wifioff" viewBox="0 0 24 24">
+        <path
+          d="M2 8.8a15 15 0 0120 0M5 12.5a10 10 0 0114 0M8.5 16a5 5 0 017 0M12 20h.01M3 3l18 18"
+        />
+      </symbol>
+      <symbol id="brain" viewBox="0 0 24 24">
+        <path
+          d="M9 4a3 3 0 00-3 3 3 3 0 00-2 5 3 3 0 002 5 3 3 0 006 1V4a3 3 0 00-3 0zM15 4a3 3 0 013 3 3 3 0 012 5 3 3 0 01-2 5 3 3 0 01-6 1"
+        />
+      </symbol>
+      <symbol id="users" viewBox="0 0 24 24">
+        <circle cx="9" cy="8" r="3.5" />
+        <path
+          d="M2.5 20a6.5 6.5 0 0113 0M16 5a3.5 3.5 0 010 7M18 14.5a6.5 6.5 0 013.5 5.5"
+        />
+      </symbol>
+      <symbol id="search" viewBox="0 0 24 24">
+        <circle cx="10.5" cy="10.5" r="6.5" />
+        <path d="M20 20l-4.8-4.8" />
+      </symbol>
+      <symbol id="book" viewBox="0 0 24 24">
+        <path
+          d="M5 4h11a3 3 0 013 3v13H8a3 3 0 01-3-3zM5 17a3 3 0 013-3h11M9 8h6"
+        />
+      </symbol>
+      <symbol id="chart" viewBox="0 0 24 24">
+        <path d="M4 20V10M10 20V4M16 20v-7M22 20H2" />
+      </symbol>
+      <symbol id="brush" viewBox="0 0 24 24">
+        <path
+          d="M20 4L10 14M9 13c-3 0-4 2-4 4s-1 3-2 3c4 1 8 0 8-4a2.5 2.5 0 00-2-3z"
+        />
+      </symbol>
+      <symbol id="globe" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" />
+      </symbol>
+      <symbol id="rocket" viewBox="0 0 24 24">
+        <path
+          d="M14 4c3-1 6-1 6-1s0 3-1 6l-6 6-5-5zM9 14l-4 1 1-4M10 15l-1 4 4-1M15 8.5h.01"
+        />
+      </symbol>
+      <symbol id="plug" viewBox="0 0 24 24">
+        <path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 01-12 0zM12 17v4" />
+      </symbol>
+      <symbol id="bolt" viewBox="0 0 24 24">
+        <path d="M13 2L4 14h7l-1 8 9-12h-7z" />
+      </symbol>
+      <symbol id="dollar" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path
+          d="M15 9c-.5-1.2-1.700-2-3-2-1.700 0-3 1-3 2.200s1.300 2 3 2 3 .8 3 2-1.300 2.200-3 2.200c-1.300 0-2.500-.8-3-2M12 5.500v13"
+        />
+      </symbol>
+      <symbol id="check" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M8 12.500l3 3 5-6" />
+      </symbol>
+      <symbol id="laptop" viewBox="0 0 24 24">
+        <rect x="4" y="5" width="16" height="11" rx="1.500" />
+        <path d="M2 20h20" />
+      </symbol>
+      <symbol id="cal" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="16" rx="2" />
+        <path d="M3 10h18M8 3v4M16 3v4" />
+      </symbol>
+      <symbol id="headset" viewBox="0 0 24 24">
+        <path
+          d="M4 14v-2a8 8 0 0116 0v2M4 14h3v5H4zM17 14h3v5h-3zM20 19c0 2-3 2-6 2"
+        />
+      </symbol>
+      <symbol id="chat" viewBox="0 0 24 24">
+        <path d="M4 5h16v11H9l-5 4z" />
+      </symbol>
+      <symbol id="doc" viewBox="0 0 24 24">
+        <path d="M6 3h8l4 4v14H6zM14 3v4h4M9 12h6M9 16h6" />
+      </symbol>
+      <symbol id="gear" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="3" />
+        <path
+          d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"
+        />
+      </symbol>
+      <symbol id="arrow" viewBox="0 0 24 24">
+        <path d="M5 12h14M13 6l6 6-6 6" />
+      </symbol>
+      <symbol id="build" viewBox="0 0 24 24">
+        <path d="M4 21V8l8-5 8 5v13M9 21v-6h6v6M8 11h.01M16 11h.01" />
+      </symbol>
+      <symbol id="plus" viewBox="0 0 24 24">
+        <path d="M12 5v14M5 12h14" />
+      </symbol>
+    </svg>
+
+    <header>
+      <div class="wrap nav">
+        <a href="#" class="logo" aria-label="VelaKoda home"
+          ><img
+            src="assets/images/logo.png"
+            alt="VelaKoda"
+            width="130"
+            height="36"
+        /></a>
+        <input type="checkbox" id="nt" aria-hidden="true" />
+        <nav class="menu" aria-label="Main">
+          <a href="#about">Product</a><a href="#features">Features</a
+          ><a href="#deployment">Deployment</a><a href="#pricing">Pricing</a
+          ><a href="#about">About Us</a><a href="#contact">Contact</a>
+        </nav>
+        <div class="actions">
+          <a href="#" class="btn">Login</a>
+          <a href="#contact" class="btn gold"
+            >Get Demo <svg class="i"><use href="#arrow" /></svg
+          ></a>
+        </div>
+        <label for="nt" class="burger" aria-label="Toggle menu">&#9776;</label>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <!-- HERO -->
+      <section class="hero">
+        <div>
+          <span class="pill"
+            ><svg class="i"><use href="#lock" /></svg> PRIVATE AI CHATBOT FOR
+            YOUR BUSINESS</span
+          >
+          <h1>
+            Your Data.<br />Your AI.<br /><span class="gold"
+              >Your Control.</span
+            >
+          </h1>
+          <p class="sub">
+            Enterprise AI Without Compromising Privacy.<br />Deploy Anywhere.
+            Chat Securely. Scale Confidently.
+          </p>
+          <h3>
+            <span class="gold">VelaKoda</span> – Private AI Chatbot for Your
+            Business
+          </h3>
+          <p class="d">
+            Deploy secure AI assistants with your own data. Run on cloud,
+            on-premise, or offline using lightweight or enterprise AI models.
+          </p>
+          <div class="cta-row">
+            <a href="#contact" class="btn gold"
+              >Get Demo <svg class="i"><use href="#arrow" /></svg
+            ></a>
+            <a href="#pricing" class="btn"
+              >Start Free Trial <svg class="i"><use href="#arrow" /></svg
+            ></a>
+          </div>
+          <div class="badges">
+            <span
+              ><svg class="i"><use href="#shield" /></svg>Enterprise Ready</span
+            >
+            <span
+              ><svg class="i"><use href="#lock" /></svg>Privacy Focused</span
+            >
+            <span
+              ><svg class="i"><use href="#shield" /></svg>Secure by Design</span
+            >
+            <span
+              ><svg class="i"><use href="#users" /></svg>Trusted by
+              Businesses</span
+            >
+          </div>
+        </div>
+
+        <div class="vis">
+          <img
+            src="assets/images/hero-visual.png"
+            alt="VelaKoda assistant with cloud, on-premise and offline deployment"
+          />
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="about" id="about">
+        <div class="rack">
+          <img
+            src="assets/images/server-shield.png"
+            alt="Secure private AI servers"
+          />
+        </div>
+        <div>
+          <span class="eyebrow">ABOUT VELAKODA</span>
+          <h2>
+            Private AI Deployment.<br />Total Control.<br />Built for Business.
+          </h2>
+          <p>
+            VelaKoda empowers organizations to deploy AI chatbots securely with
+            complete ownership of their data and infrastructure.
+          </p>
+          <div class="pt">
+            <span class="ic"
+              ><img src="assets/icons/about-cloud.png" alt=""
+            /></span>
+            <div>
+              <h4>Cloud, On-Premise or Offline</h4>
+              <p>
+                Deploy wherever it fits your infrastructure and compliance
+                needs.
+              </p>
+            </div>
+          </div>
+          <div class="pt">
+            <span class="ic"
+              ><img src="assets/icons/about-data.png" alt=""
+            /></span>
+            <div>
+              <h4>Your Data Stays Yours</h4>
+              <p>No data leaves your environment unless you choose to.</p>
+            </div>
+          </div>
+          <div class="pt">
+            <span class="ic"
+              ><img src="assets/icons/about-security.png" alt=""
+            /></span>
+            <div>
+              <h4>Enterprise Grade Security</h4>
+              <p>End-to-end encryption, role-based access, and audit logs.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section id="features">
+        <div class="sec">
+          <h2>
+            Powerful <span class="gold">Features</span> for Modern Businesses
+          </h2>
+        </div>
+        <div class="grid g6">
+          <article class="tile">
+            <div class="big">
+              <img
+                src="assets/icons/private-secure.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <h4>Private &amp; Secure</h4>
+            <p>Your data is encrypted and never leaves your control.</p>
+          </article>
+          <article class="tile">
+            <div class="big">
+              <img src="assets/icons/offline-ai.png" alt="" loading="lazy" />
+            </div>
+            <h4>Offline AI Support</h4>
+            <p>Run AI models offline without internet dependency.</p>
+          </article>
+          <article class="tile">
+            <div class="big">
+              <img src="assets/icons/online-ai.png" alt="" loading="lazy" />
+            </div>
+            <h4>Online AI Models</h4>
+            <p>Integrate with leading AI models securely and flexibly.</p>
+          </article>
+          <article class="tile">
+            <div class="big">
+              <img src="assets/icons/multi-user.png" alt="" loading="lazy" />
+            </div>
+            <h4>Multi-User Access</h4>
+            <p>Role-based access control for teams of any size.</p>
+          </article>
+          <article class="tile">
+            <div class="big">
+              <img src="assets/icons/smart-search.png" alt="" loading="lazy" />
+            </div>
+            <h4>Smart Search</h4>
+            <p>AI-powered search across documents and conversations.</p>
+          </article>
+          <article class="tile">
+            <div class="big">
+              <img
+                src="assets/icons/knowledge-base.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <h4>Knowledge Base</h4>
+            <p>Build and manage your own knowledge base effortlessly.</p>
+          </article>
+          <article class="tile">
+            <div class="big">
+              <img src="assets/icons/cloud-onprem.png" alt="" loading="lazy" />
+            </div>
+            <h4>Cloud or On-Premise</h4>
+            <p>Deploy on cloud, your servers, or any private environment.</p>
+          </article>
+          <article class="tile">
+            <div class="big">
+              <img src="assets/icons/analytics.png" alt="" loading="lazy" />
+            </div>
+            <h4>Analytics Dashboard</h4>
+            <p>
+              Real-time insights and analytics to track usage and performance.
+            </p>
+          </article>
+          <article class="tile">
+            <div class="big">
+              <img src="assets/icons/white-label.png" alt="" loading="lazy" />
+            </div>
+            <h4>White Label</h4>
+            <p>Customize branding and make it truly yours.</p>
+          </article>
+          <article class="tile">
+            <div class="big">
+              <img
+                src="assets/icons/multi-language.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <h4>Multi-Language</h4>
+            <p>Support for 100+ languages for global businesses.</p>
+          </article>
+          <article class="tile">
+            <div class="big">
+              <img src="assets/icons/fast-deploy.png" alt="" loading="lazy" />
+            </div>
+            <h4>Fast Deployment</h4>
+            <p>Get your AI assistant up and running in minutes.</p>
+          </article>
+          <article class="tile">
+            <div class="big">
+              <img src="assets/icons/api.png" alt="" loading="lazy" />
+            </div>
+            <h4>API Integration</h4>
+            <p>Seamlessly integrate with your existing systems.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- DEPLOYMENT -->
+      <section id="deployment">
+        <div class="sec">
+          <h2>Flexible <span class="gold">Deployment</span> Options</h2>
+        </div>
+        <div class="grid g5">
+          <article class="tile dep">
+            <div class="big">
+              <img
+                src="assets/images/dep-cloud-hosted.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <h4>Cloud Hosted</h4>
+            <p>Fully managed cloud deployment by VelaKoda.</p>
+          </article>
+          <article class="tile dep">
+            <div class="big">
+              <img
+                src="assets/images/dep-client-cloud.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <h4>Client Cloud</h4>
+            <p>Deploy on your AWS, Azure, or GCP infrastructure.</p>
+          </article>
+          <article class="tile dep">
+            <div class="big">
+              <img
+                src="assets/images/dep-on-premise.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <h4>On-Premise Server</h4>
+            <p>Install within your infrastructure behind your firewall.</p>
+          </article>
+          <article class="tile dep">
+            <div class="big">
+              <img
+                src="assets/images/dep-offline-server.png"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <h4>Offline Local Server</h4>
+            <p>Run completely offline in air-gapped environments.</p>
+          </article>
+          <article class="tile dep">
+            <div class="big">
+              <img src="assets/images/dep-hybrid.png" alt="" loading="lazy" />
+            </div>
+            <h4>Hybrid Deployment</h4>
+            <p>Combine cloud and on-premise for maximum flexibility.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section id="pricing">
+        <div class="sec sm">
+          <h2>Simple, Transparent <span class="gold">Pricing</span></h2>
+        </div>
+        <div class="pricing">
+          <div class="plans">
+            <article class="plan">
+              <h3>Starter</h3>
+              <small>Perfect for small teams</small>
+              <div class="price">$99 <small>/month</small></div>
+              <ul>
+                <li>
+                  <svg class="i"><use href="#check" /></svg>Up to 5 Users
+                </li>
+                <li>
+                  <svg class="i"><use href="#check" /></svg>Basic AI Models
+                </li>
+                <li>
+                  <svg class="i"><use href="#check" /></svg>Knowledge Base
+                </li>
+                <li>
+                  <svg class="i"><use href="#check" /></svg>Standard Support
+                </li>
+                <li>
+                  <svg class="i"><use href="#check" /></svg>Cloud Deployment
+                </li>
+              </ul>
+              <a href="#contact" class="btn">Start Free Trial</a>
+            </article>
+            <article class="plan pop">
+              <span class="tag">MOST POPULAR</span>
+              <h3>Business</h3>
+              <small>Ideal for growing businesses</small>
+              <div class="price">$299 <small>/month</small></div>
+              <ul>
+                <li>
+                  <svg class="i"><use href="#check" /></svg>Up to 50 Users
+                </li>
+                <li>
+                  <svg class="i"><use href="#check" /></svg>Advanced AI Models
+                </li>
+                <li>
+                  <svg class="i"><use href="#check" /></svg>Smart Search
+                </li>
+                <li>
+                  <svg class="i"><use href="#check" /></svg>Analytics Dashboard
+                </li>
+                <li>
+                  <svg class="i"><use href="#check" /></svg>Priority Support
+                </li>
+                <li>
+                  <svg class="i"><use href="#check" /></svg>Cloud or On-Premise
+                </li>
+                <li>
+                  <svg class="i"><use href="#check" /></svg>API Access
+                </li>
+              </ul>
+              <a href="#contact" class="btn gold">Get Started</a>
+            </article>
+            <article class="plan">
+              <h3>Enterprise</h3>
+              <small>For large organizations</small>
+              <div class="price">Custom</div>
+              <ul>
+                <li>
+                  <svg class="i"><use href="#check" /></svg>Unlimited Users
+                </li>
+                <li>
+                  <svg class="i"><use href="#check" /></svg>Custom AI Models
+                </li>
+                <li>
+                  <svg class="i"><use href="#check" /></svg>Advanced Security
+                </li>
+                <li>
+                  <svg class="i"><use href="#check" /></svg>White Label
+                </li>
+                <li>
+                  <svg class="i"><use href="#check" /></svg>Dedicated Support
+                </li>
+                <li>
+                  <svg class="i"><use href="#check" /></svg>On-Premise / Hybrid
+                </li>
+                <li>
+                  <svg class="i"><use href="#check" /></svg>SLA &amp; Compliance
+                </li>
+              </ul>
+              <a href="#contact" class="btn">Contact Sales</a>
+            </article>
+          </div>
+          <div class="chip">
+            <img src="assets/images/ai-chip.png" alt="AI chip" />
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY -->
+      <section>
+        <div class="sec sm">
+          <h2>Why Businesses Choose <span class="gold">VelaKoda</span></h2>
+        </div>
+        <div class="why">
+          <div>
+            <span class="ic"
+              ><img src="assets/icons/why-privacy.png" alt=""
+            /></span>
+            <h4>Privacy-first AI</h4>
+            <p>Your data is always private and secure.</p>
+          </div>
+          <div>
+            <span class="ic"
+              ><img src="assets/icons/why-flexible.png" alt=""
+            /></span>
+            <h4>Flexible Deployment</h4>
+            <p>Deploy on cloud, on-premise, or offline.</p>
+          </div>
+          <div>
+            <span class="ic"
+              ><img src="assets/icons/why-security.png" alt=""
+            /></span>
+            <h4>Enterprise Security</h4>
+            <p>Built with enterprise-grade security standards.</p>
+          </div>
+          <div>
+            <span class="ic"
+              ><img src="assets/icons/why-local-cloud.png" alt=""
+            /></span>
+            <h4>Local &amp; Cloud AI Support</h4>
+            <p>Use the best of both worlds seamlessly.</p>
+          </div>
+          <div>
+            <span class="ic"
+              ><img src="assets/icons/why-fast-impl.png" alt=""
+            /></span>
+            <h4>Fast Implementation</h4>
+            <p>Go live in days, not months.</p>
+          </div>
+          <div>
+            <span class="ic"
+              ><img src="assets/icons/why-pricing.png" alt=""
+            /></span>
+            <h4>Affordable Pricing</h4>
+            <p>Enterprise features at fair prices.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta" id="contact">
+        <div>
+          <h2>Ready to Build Your Private AI Assistant?</h2>
+          <p>
+            Take control of your data. Empower your business. Get started with
+            VelaKoda today.
+          </p>
+        </div>
+        <div class="cta-row">
+          <a href="#" class="btn gold"
+            ><svg class="i"><use href="#cal" /></svg>Schedule a Demo</a
+          >
+          <a href="#" class="btn"
+            ><svg class="i"><use href="#headset" /></svg>Contact Sales</a
+          >
+          <a href="#" class="btn dark"
+            ><svg class="i"><use href="#rocket" /></svg>Start Free Trial</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer>&copy; 2026 VelaKoda. All rights reserved.</footer>
+  </body>
+</html>
